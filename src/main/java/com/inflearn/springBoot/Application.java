@@ -1,12 +1,22 @@
 package com.inflearn.springBoot;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.WebApplicationType;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication
+//@SpringBootApplication
+@SpringBootConfiguration
+@ComponentScan
+//@EnableAutoConfiguration
 public class Application {
     public static void main(String[] args) {
+        SpringApplication application = new SpringApplication(Application.class);
+        application.setWebApplicationType(WebApplicationType.NONE);
+        application.run(args);
         // step1 started
-        SpringApplication.run(Application.class, args);
+        //SpringApplication.run(Application.class, args);
     }
 }
